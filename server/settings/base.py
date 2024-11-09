@@ -151,25 +151,21 @@ CACHES = {
     },
 }
 
-# create database xadmin default character set utf8 COLLATE utf8_general_ci;
-# grant all on xadmin.* to server@'127.0.0.1' identified by 'KGzKjZpWBp4R4RSa';
-# python manage.py makemigrations
-# python manage.py migrate
+
 DATABASES = {
     'default': {
-        'ENGINE': locals().get('DB_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': locals().get('DB_DATABASE', BASE_DIR / "db.sqlite3"),
-        'HOST': locals().get('DB_HOST', 'mariadb'),
-        'PORT': locals().get('DB_PORT', 3306),
-        'USER': locals().get('DB_USER', 'server'),
-        'PASSWORD': locals().get('DB_PASSWORD', 'KGzKjZpWBp4R4RSa'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dvadmin',
+        'HOST':'127.0.0.1',
+        'PORT':3306,
+        'USER':'root',
+        'PASSWORD':'Passw0rd@123',
         'CONN_MAX_AGE': 600,
-        # 设置MySQL的驱动
-        # 'OPTIONS': {'init_command': 'SET storage_engine=INNODB'},
-        # 'OPTIONS': {'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"', 'charset': 'utf8mb4'},
-        'OPTIONS': locals().get('DB_OPTIONS',
-                                {'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"', 'charset': 'utf8mb4',
-                                 'collation': 'utf8mb4_bin'}),
+        'OPTIONS': {
+            'init_command': 'SET storage_engine=INNODB',
+            'sql_mode': 'STRICT_TRANS_TABLES',
+            'charset': 'utf8mb4',
+        },
     }
 }
 # https://docs.djangoproject.com/zh-hans/5.0/topics/db/multi-db/#automatic-database-routing

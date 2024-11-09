@@ -38,13 +38,10 @@ DB_PASSWORD = 'KGzKjZpWBp4R4RSa'
 DB_OPTIONS = {'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"', 'charset': 'utf8mb4', 'collation': 'utf8mb4_bin'}
 
 
-# sqlite3 配置，和 mysql配置 二选一, 默认mysql数据库
-# DB_ENGINE = 'django.db.backends.sqlite3'
-
 # 缓存配置
-REDIS_HOST = "redis"
+REDIS_HOST = "127.0.0.1"
 REDIS_PORT = 6379
-REDIS_PASSWORD = "nineven"
+REDIS_PASSWORD = "passw0rd"
 
 # 需要将创建的应用写到里面
 XADMIN_APPS = []
