@@ -159,10 +159,9 @@ DATABASES = {
         'HOST':'127.0.0.1',
         'PORT':3306,
         'USER':'root',
-        'PASSWORD':'Passw0rd@123',
+        'PASSWORD':'passw0rd',
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
-            'init_command': 'SET storage_engine=INNODB',
             'sql_mode': 'STRICT_TRANS_TABLES',
             'charset': 'utf8mb4',
         },
